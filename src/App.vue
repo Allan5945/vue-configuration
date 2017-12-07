@@ -1,31 +1,32 @@
 <template>
   <div id="app">
-    <!--<img src="./static/img/145.jpg" alt="">-->
-      <div id="sasa">&#xe624;</div>
+    <!--<el-button>默认按钮</el-button>-->
+    <router-link to="demo1">demo1</router-link>
+    <router-link to="demo2">demo2</router-link>
+    <router-view></router-view>
   </div>
 </template>
-
 <script>
-export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-}
-</script>
+  import * as vx from 'vuex'
 
-<style>
-  @font-face {
-    font-family: 'DemiLight';
-    src: url("/src/static/font/iconfont.ttf");
+  export default {
+    name: 'app',
+    data() {
+      return {}
+    },
+    methods: {
+      ...vx.mapActions([
+        'testVuex'
+      ])
+    },
+    mounted: function () {
+
+    },
+    computed: {
+      ...vx.mapGetters([
+        'testData'
+      ])
+    },
+    components: {}
   }
-  #sasa{
-    font-family: myface;
-    color: red;
-  }
-  #app{
-    color: red;
-  }
-</style>
+</script>
