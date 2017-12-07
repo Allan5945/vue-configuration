@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <!--<el-button>默认按钮</el-button>-->
     <router-link to="demo1">demo1</router-link>
     <router-link to="demo2">demo2</router-link>
     <router-view></router-view>
+    <el-button>element组件</el-button>
+    <el-radio v-model="radio" label="1">备选项</el-radio>
+    <el-radio v-model="radio" label="2">备选项</el-radio>
   </div>
 </template>
 <script>
@@ -12,7 +14,9 @@
   export default {
     name: 'app',
     data() {
-      return {}
+      return {
+        radio: '1'
+      }
     },
     methods: {
       ...vx.mapActions([

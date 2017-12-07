@@ -3,8 +3,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import axios from 'axios'
 
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import { Button, Radio } from 'element-ui';  // 引入element-ui 框架
 
 import './static/css/test.less'
 import './static/css/test.scss'
@@ -14,17 +13,19 @@ import store from './store/'
 
 Vue.prototype.$ajax = axios;        // 扩展axios 请求数据
 
-// Vue.use(ElementUI);
+Vue.use(Button);
+Vue.use(Radio);
 Vue.use(VueRouter);
 
 const router = new VueRouter({
     routes: routerConfig.routes,
     // mode: 'history'
 });
-
+const nijis = '666';
 new Vue({
     router,
     store,
     el: '#app',
     render: h => h(App)
 })
+
